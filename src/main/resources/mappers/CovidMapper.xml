@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.tfriends.mapper.CovidMapper">
+	<select id="getList" resultType="CovidLocationVO">
+		SELECT * FROM covid19
+	</select>
+	<select id="getloc" resultType="CovidLocationVO">
+		SELECT * FROM covid19 where lname = #{lname}
+	</select>
+	<update id="covidupdate">
+		UPDATE covid19 SET
+		todayoverflow = #{todayoverflow},
+		todaylocalocc = #{todaylocalocc},
+		todaydef = #{todaydef},
+		todayisoclear = #{todayisoclear},
+		todaydeath = #{todaydeath},
+		todayinc = #{todayinc},
+		yesterdayoverflow = #{yesterdayoverflow},
+		yesterdaylocalocc = #{yesterdaylocalocc},
+		yesterdaydef = #{yesterdaydef},
+		yesterdayisoclear = #{yesterdayisoclear},
+		yesterdaydeath = #{yesterdaydeath},
+		yesterdayinc = #{yesterdayinc}
+		WHERE lname = #{lname}
+	</update>
+	<select id="countinfo" resultType="CountVO">
+		SELECT * FROM count_covid where daytime = #{daytime}
+	</select>
+
+	<update id="count">
+		UPDATE count_covid SET
+		visit = visit + 1
+		WHERE daytime = #{daytime}
+	</update>
+	<insert id="newday">
+		INSERT INTO count_covid (daytime, visit) VALUES (#{daytime}, 0)
+	</insert>
+ </mapper>

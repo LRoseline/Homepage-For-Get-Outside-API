@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tfriends.mapper.WeatherMapper">
+ 	<select id="winfo" resultType="com.tfriends.domain.WeatherVO">
+ 		SELECT * FROM weather
+		INNER JOIN location ON location.locnameen = weather.wlocname
+		INNER JOIN dust ON dust.dlocname = weather.wlocname
+		WHERE wlocname = #{local}
+ 	</select>
+ 	<update id="updatedust">
+ 		UPDATE dust SET
+ 		pm10v = #{pm10v},
+ 		pm25v = #{pm25v},
+ 		pm10g = #{pm10g},
+ 		pm25g = #{pm25g}
+ 		WHERE dlocname = #{dlocname}
+ 	</update>
+ 	<update id="updateweather">
+ 		UPDATE weather SET
+ 		winddegreenow = #{winddegreenow},
+ 		windspeednow = #{windspeednow},
+ 		humidnow = #{humidnow},
+ 		iconnow = #{iconnow},
+ 		tempnow = #{tempnow},
+ 		sunrise = #{sunrise},
+ 		sunset = #{sunset},
+ 		icon1 = #{icon1},
+ 		temp1 = #{temp1},
+ 		icon2 = #{icon2},
+ 		temp2 = #{temp2},
+ 		icon3 = #{icon3},
+ 		temp3 = #{temp3},
+ 		icon4 = #{icon4},
+ 		temp4 = #{temp4}
+ 		WHERE wlocname = #{wlocname}
+ 	</update>
+ </mapper>
