@@ -243,15 +243,14 @@ public class WeatherImage extends PrivacyKey{
 				BufferedImage daybuffimg = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 				String naming [] = {"내일","모레","글피","그글피"};
 				
-				
-				// Day 1
-				String tempd1 = Math.round(tester.getTemp1()) + "˚C";
-				
 				Graphics2D d0local = daybuffimg.createGraphics();
 				d0local.setColor(Color.black);
 				d0local.setFont(new Font("맑은 고딕", Font.BOLD, 40));
 				FontMetrics fm0 = d0local.getFontMetrics();
 				int xt0 = ((300 - fm0.stringWidth(locale)) / 2);
+				
+				// Day 1
+				String tempd1 = Math.round(tester.getTemp1()) + "˚C";
 				
 				Graphics2D naming1 = daybuffimg.createGraphics();
 				naming1.setColor(Color.BLACK);
