@@ -15,6 +15,7 @@ import java.util.Date;
 import javax.imageio.ImageIO;
 
 import org.json.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +25,8 @@ import com.tfriends.service.KeyTrigger;
 @Component
 public class Finance extends PrivacyKey{
 
-	KeyTrigger k = new KeyTrigger();
+	@Autowired
+	private KeyTrigger k;
 	
 	private static Image img = null;
 

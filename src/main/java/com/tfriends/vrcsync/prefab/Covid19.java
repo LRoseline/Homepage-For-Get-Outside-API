@@ -34,11 +34,12 @@ public class Covid19 extends PrivacyKey{
 	
 	@Autowired
 	private CovidService service;
+
+	@Autowired
+	private KeyTrigger k;
 	
 	private static Image img = null;
 	private static Image imgloc = null;
-
-	KeyTrigger k = new KeyTrigger();
 
 	@Scheduled(cron = "0 50 23 * * *")
 	public void AdarasiCovidCount() {
