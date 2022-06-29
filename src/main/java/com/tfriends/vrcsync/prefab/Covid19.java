@@ -41,7 +41,7 @@ public class Covid19 extends PrivacyKey{
 	private static Image img = null;
 	private static Image imgloc = null;
 
-	@Scheduled(cron = "0 50 23 * * *")
+	@Scheduled(cron = "0 50 21 * * *")
 	public void AdarasiCovidCount() {
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 		Calendar tomorrow = Calendar.getInstance();
