@@ -13,7 +13,8 @@ import org.springframework.stereotype.Component;
 
 import com.tfriends.domain.WeatherVO;
 import com.tfriends.keys.PrivacyKey;
-import com.tfriends.service.KeyTrigger;
+// import com.tfriends.service.KeyTrigger;
+import com.tfriends.service.SettingService;
 import com.tfriends.service.WeatherService;
 
 @Component
@@ -27,7 +28,7 @@ public class WeatherTest extends PrivacyKey {
 	private WeatherService service;
 
 	@Autowired
-	private KeyTrigger k;
+	private SettingService k;
 	
 	@Scheduled(cron = "6 0 * * * * ")
 	public void WeatherTry() throws Exception {
@@ -35,7 +36,7 @@ public class WeatherTest extends PrivacyKey {
 		
 		for (int i = 0; i < loc.length; i++) {
 			String urlcom = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat[i] + "&lon=" + lon[i] + 
-			"&appid=" + k.Tricker(0) + "&cnt=1&units=metric";
+			"&appid=" + k.SettingLoad("openweathermap1").getValue() + "&cnt=1&units=metric";
 			
 			URL urlweather = new URL(urlcom);
 			String jsonline = "";
@@ -182,7 +183,7 @@ public class WeatherTest extends PrivacyKey {
 			Thread.sleep(500);
 		}
 
-		String dustcom = "http://apis.data.go.kr/B552584/ArpltnStatsSvc/getCtprvnMesureLIst?" + "&numOfRows=" + nor + "&pageNo=" + pn + "&dataGubun=HOUR&searchCondition=WEEK&returnType=json&serviceKey=" + k.Tricker(3);
+		String dustcom = "http://apis.data.go.kr/B552584/ArpltnStatsSvc/getCtprvnMesureLIst?" + "&numOfRows=" + nor + "&pageNo=" + pn + "&dataGubun=HOUR&searchCondition=WEEK&returnType=json&serviceKey=" + k.SettingLoad("datagokr").getValue();
 
 		URL urldust10 = new URL(dustcom + "&itemCode=PM10");
 		URL urldust25 = new URL(dustcom + "&itemCode=PM25");

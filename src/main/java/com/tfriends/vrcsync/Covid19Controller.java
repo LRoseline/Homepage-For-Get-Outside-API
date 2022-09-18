@@ -45,7 +45,7 @@ public class Covid19Controller {
 				new File("/home/emilia/covid19/covidvrc.png"))), header, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
-				new File("D:/Emergy/covidvrc.png"))), header, HttpStatus.CREATED);
+				new File("C:/Users/amb17/Pictures/tomcat/covid19/covidvrc.png"))), header, HttpStatus.CREATED);
 		}
 	}
 	
@@ -62,7 +62,7 @@ public class Covid19Controller {
 				new File("/home/emilia/covid19/covidvrc1.png"))), header, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
-				new File("D:/Emergy/covidvrc1.png"))), header, HttpStatus.CREATED);
+				new File("C:/Users/amb17/Pictures/tomcat/covid19/covidvrc1.png"))), header, HttpStatus.CREATED);
 		}
 	}
 }

@@ -20,20 +20,20 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.tfriends.keys.PrivacyKey;
-import com.tfriends.service.KeyTrigger;
+import com.tfriends.service.SettingService;
 
 @Component
 public class Finance extends PrivacyKey{
 
 	@Autowired
-	private KeyTrigger k;
+	private SettingService setting;
 	
 	private static Image img = null;
 
 	@Scheduled(cron = "0 2 10 * * MON-FRI")
 	public void FinanceLoad() throws Exception {
-		String Path = "/home/emilia/mambtv/finance";
-		// Path = "C:/Users/amb17/Pictures/tomcat/mambtv/finance";
+		// String Path = "/home/emilia/mambtv/finance";
+		String Path = "C:/Users/amb17/Pictures/tomcat/mambtv/finance";
 		Date kyou = new Date();
 		SimpleDateFormat TimeStamp = new SimpleDateFormat("YYYY"+"MM"+"dd");
 		
@@ -42,7 +42,7 @@ public class Finance extends PrivacyKey{
 
 		System.out.println(Today);
 
-		String urlload = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey="+k.Tricker(4)+"&searchdate="+Today+"&data=AP01";
+		String urlload = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey="+setting.SettingLoad("kxim").getValue()+"&searchdate="+Today+"&data=AP01";
 		URL FinanceFree = new URL(urlload);
 		BufferedReader reader;
 		String line;

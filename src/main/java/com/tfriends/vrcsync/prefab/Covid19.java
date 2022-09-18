@@ -15,7 +15,7 @@ import org.w3c.dom.*;
 import com.tfriends.domain.CovidLocationVO;
 import com.tfriends.keys.PrivacyKey;
 import com.tfriends.service.CovidService;
-import com.tfriends.service.KeyTrigger;
+import com.tfriends.service.SettingService;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -36,7 +36,7 @@ public class Covid19 extends PrivacyKey{
 	private CovidService service;
 
 	@Autowired
-	private KeyTrigger k;
+	private SettingService setting;
 	
 	private static Image img = null;
 	private static Image imgloc = null;
@@ -57,8 +57,8 @@ public class Covid19 extends PrivacyKey{
         int height = 500;
     	String xml;
     	
-    	String Path = "/home/emilia/covid19/";
-//    	String Path = "C:/Users/amb17/Pictures/tomcat/covid19/";
+    	// String Path = "/home/emilia/covid19/";
+   		String Path = "C:/Users/amb17/Pictures/tomcat/covid19/";
     	
 		SimpleDateFormat date = new SimpleDateFormat("YYYYMMdd");
 		Calendar today = Calendar.getInstance();
@@ -72,7 +72,7 @@ public class Covid19 extends PrivacyKey{
 		System.out.println(yesterdayin);
 		System.out.println(todayin);
 		
-        String addr = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey="+k.Tricker(3)+"&pageNo=1&numOfRows=10&startCreateDt="+yesterdayin+"&endCreateDt="+todayin;
+        String addr = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey="+setting.SettingLoad("datagokr").getValue()+"&pageNo=1&numOfRows=10&startCreateDt="+yesterdayin+"&endCreateDt="+todayin;
         URL url = new URL(addr);
         HttpURLConnection http = (HttpURLConnection)url.openConnection();
 //        http.setConnectTimeout(10000);

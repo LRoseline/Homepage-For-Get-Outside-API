@@ -37,11 +37,13 @@ public class WeatherOnlyImg extends PrivacyKey {
 		int width = 500;
 		int height = 400;
 		
-		String LinuxPath = "/usr/local/tomcat/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
+		// String LinuxPath = "/usr/local/tomcat/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
+		String LinuxPath = "C:/Program Files/Apache Software Foundation/Tomcat 9.0/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
 		// String LinuxPath = "/usr/local/tomcat/webapps/vrcpref/resources/weathericons/";
 		// LinuxPath="C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/vrcpref/resources/weathericons/";
 		
-		String LinuxSave = "/home/emilia/Weather Lite/";
+		// String LinuxSave = "/home/emilia/Weather Lite/";
+		String LinuxSave = "C:/Users/amb17/Pictures/tomcat/Weather Lite/";
 		// LinuxSave="C:/Users/amb17/Pictures/tomcat/Weather Lite/";
 		
 		for (int i = 0; i < loc.length; i++) {

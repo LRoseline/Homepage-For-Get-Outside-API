@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ErrorCon implements ErrorController {
-    String Path = "/usr/local/tomcat/webapps/vrcsync/WEB-INF/classes/static/errorimg/";
+    // String Path = "/usr/local/tomcat/webapps/vrcsync/WEB-INF/classes/static/errorimg/";
+    String Path = "C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/vrcsync/WEB-INF/classes/static/errorimg/";
     // String Path = "C:/Users/amb17/eclipse-workspace/vrcsync/src/main/resources/static/errorimg/";
 
     @GetMapping("/error")
