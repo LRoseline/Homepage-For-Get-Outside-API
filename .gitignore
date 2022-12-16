@@ -36,3 +36,4 @@ out/
 ### VS Code ###
 .vscode/
 src/main/resources/keys.txt
+gradle/wrapper/gradle-7.3.2-bin.zip
