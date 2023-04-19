@@ -39,14 +39,9 @@ public class Covid19Controller {
 
 		HttpHeaders header = new HttpHeaders();
 		header.setContentType(MediaType.IMAGE_PNG);
-		
-		try {
-			return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
-				new File("/home/emilia/covid19/covidvrc.png"))), header, HttpStatus.CREATED);
-		} catch (Exception e) {
-			return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
-				new File("C:/Users/amb17/Pictures/tomcat/covid19/covidvrc.png"))), header, HttpStatus.CREATED);
-		}
+
+		return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
+			new File("D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/covid19/covidvrc.png"))), header, HttpStatus.CREATED);
 	}
 	
 	
@@ -56,13 +51,7 @@ public class Covid19Controller {
 		HttpHeaders header = new HttpHeaders();
 		header.setContentType(MediaType.IMAGE_PNG);
 		
-		
-		try {
-			return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
-				new File("/home/emilia/covid19/covidvrc1.png"))), header, HttpStatus.CREATED);
-		} catch (Exception e) {
-			return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
-				new File("C:/Users/amb17/Pictures/tomcat/covid19/covidvrc1.png"))), header, HttpStatus.CREATED);
-		}
+		return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
+			new File("D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/covid19/covidvrc1.png"))), header, HttpStatus.CREATED);
 	}
 }

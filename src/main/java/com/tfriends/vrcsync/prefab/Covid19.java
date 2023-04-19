@@ -58,7 +58,7 @@ public class Covid19 extends PrivacyKey{
     	String xml;
     	
     	// String Path = "/home/emilia/covid19/";
-   		String Path = "C:/Users/amb17/Pictures/tomcat/covid19/";
+   		String Path = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/covid19/";
     	
 		SimpleDateFormat date = new SimpleDateFormat("YYYYMMdd");
 		Calendar today = Calendar.getInstance();

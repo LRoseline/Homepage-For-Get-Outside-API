@@ -30,16 +30,9 @@ public class HomeController {
 		HttpHeaders header = new HttpHeaders();
 		header.setContentType(MediaType.IMAGE_PNG);
 		
-		try {
-			return new ResponseEntity<byte[]>(
-					IOUtils.toByteArray(new FileInputStream(
-							new File("/home/emilia/weatherbg/"+icon+".jpg"))),
-					header, HttpStatus.CREATED);
-		} catch (Exception e) {
-			return new ResponseEntity<byte[]>(
-					IOUtils.toByteArray(new FileInputStream(
-							new File("C:/Users/amb17/Pictures/tomcat/weatherbg/"+icon+".jpg"))),
-					header, HttpStatus.CREATED);
-		}
+		return new ResponseEntity<byte[]>(
+			IOUtils.toByteArray(new FileInputStream(
+					new File("D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/weatherbg/"+icon+".jpg"))),
+			header, HttpStatus.CREATED);
 	}
 }

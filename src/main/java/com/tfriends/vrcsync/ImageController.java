@@ -17,8 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/mambtv/*")
 @Controller
 public class ImageController {
-	String WindowsPath = "C:/Users/amb17/Pictures/tomcat/mambtv/weather/";
-	String LinuxPath = "/home/emilia/mambtv/weather/";
+	String WindowsPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/mambtv/weather/";
 	
 	@ResponseBody
 	@GetMapping("/weather_now")
@@ -27,29 +26,15 @@ public class ImageController {
 		HttpHeaders header = new HttpHeaders();
 		header.setContentType(MediaType.IMAGE_PNG);
 		try {
-			try {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(LinuxPath+local+".png"))),
-						header, HttpStatus.CREATED);
-			} catch (Exception e) {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(LinuxPath+"daejeon"+".png"))),
-						header, HttpStatus.CREATED);
-			}
-		} catch (Exception e1) {
-			try {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(WindowsPath+local+".png"))),
-						header, HttpStatus.CREATED);
-			} catch (Exception e) {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(WindowsPath+"daejeon"+".png"))),
-						header, HttpStatus.CREATED);
-			}
+			return new ResponseEntity<byte[]>(
+					IOUtils.toByteArray(new FileInputStream(
+							new File(WindowsPath+local+".png"))),
+					header, HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<byte[]>(
+					IOUtils.toByteArray(new FileInputStream(
+							new File(WindowsPath+"daejeon"+".png"))),
+					header, HttpStatus.CREATED);
 		}
 	}
 		
@@ -61,29 +46,15 @@ public class ImageController {
 		header.setContentType(MediaType.IMAGE_PNG);
 
 		try {
-			try {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(LinuxPath+local+"_forecast.png"))),
-						header, HttpStatus.CREATED);
-			} catch (Exception e) {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(LinuxPath+"daejeon"+"_forecast.png"))),
-						header, HttpStatus.CREATED);
-			}
-		} catch (Exception e1) {
-			try {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(WindowsPath+local+"_forecast.png"))),
-						header, HttpStatus.CREATED);
-			} catch (Exception e) {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(WindowsPath+"daejeon"+"_forecast.png"))),
-						header, HttpStatus.CREATED);
-			}
+			return new ResponseEntity<byte[]>(
+					IOUtils.toByteArray(new FileInputStream(
+							new File(WindowsPath+local+"_forecast.png"))),
+					header, HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<byte[]>(
+					IOUtils.toByteArray(new FileInputStream(
+							new File(WindowsPath+"daejeon"+"_forecast.png"))),
+					header, HttpStatus.CREATED);
 		}
 	}
 }

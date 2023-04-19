@@ -35,14 +35,8 @@ public class WeatherImage extends PrivacyKey{
 	
 	@Scheduled(cron = "25 0 0,8-22 * * *")
 	public void CronTry() throws Exception {
-		String LinuxPath = "C:/Program Files/Apache Software Foundation/Tomcat 9.0/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
-		// String LinuxPath = "/usr/local/tomcat/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
-		// String LinuxPath = "/usr/local/tomcat/webapps/vrcpref/resources/weathericons/";
-		// LinuxPath="C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/vrcpref/resources/weathericons/";
-		
-		// String LinuxSave = "/home/emilia/mambtv/weather/";
-		String LinuxSave = "C:/Users/amb17/Pictures/tomcat/mambtv/weather/";
-		// LinuxSave="C:/Users/amb17/Pictures/tomcat/mambtv/weather/";
+		String LinuxPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
+		String LinuxSave = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/mambtv/weather/";
 	
 		SimpleDateFormat date = new SimpleDateFormat("MM월 dd일");
 		Calendar d1 = Calendar.getInstance();

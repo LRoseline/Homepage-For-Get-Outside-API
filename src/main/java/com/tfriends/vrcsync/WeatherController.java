@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class WeatherController {
-	String WindowsPath = "C:/Users/amb17/Pictures/tomcat/Weather Lite/";
-	String LinuxPath = "/home/emilia/Weather Lite/";
+	String WindowsPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/Weather Lite/";
 	
 	@ResponseBody
 	@GetMapping("/weatherlite")
@@ -24,30 +23,17 @@ public class WeatherController {
 		
 		HttpHeaders header = new HttpHeaders();
 		header.setContentType(MediaType.IMAGE_PNG);
+
 		try {
-			try {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(LinuxPath+local+".png"))),
-						header, HttpStatus.CREATED);
-			} catch (Exception e) {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(LinuxPath+"daejeon"+".png"))),
-						header, HttpStatus.CREATED);
-			}
-		} catch (Exception e1) {
-			try {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(WindowsPath+local+".png"))),
-						header, HttpStatus.CREATED);
-			} catch (Exception e) {
-				return new ResponseEntity<byte[]>(
-						IOUtils.toByteArray(new FileInputStream(
-								new File(WindowsPath+"daejeon"+".png"))),
-						header, HttpStatus.CREATED);
-			}
+			return new ResponseEntity<byte[]>(
+					IOUtils.toByteArray(new FileInputStream(
+							new File(WindowsPath+local+".png"))),
+					header, HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<byte[]>(
+					IOUtils.toByteArray(new FileInputStream(
+							new File(WindowsPath+"daejeon"+".png"))),
+					header, HttpStatus.CREATED);
 		}
 	}
 }

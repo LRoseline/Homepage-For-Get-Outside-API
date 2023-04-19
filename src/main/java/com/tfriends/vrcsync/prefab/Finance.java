@@ -33,7 +33,7 @@ public class Finance extends PrivacyKey{
 	@Scheduled(cron = "0 2 10 * * MON-FRI")
 	public void FinanceLoad() throws Exception {
 		// String Path = "/home/emilia/mambtv/finance";
-		String Path = "C:/Users/amb17/Pictures/tomcat/mambtv/finance";
+		String Path = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/mambtv/finance";
 		Date kyou = new Date();
 		SimpleDateFormat TimeStamp = new SimpleDateFormat("YYYY"+"MM"+"dd");
 		
