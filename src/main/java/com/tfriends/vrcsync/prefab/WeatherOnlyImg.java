@@ -32,7 +32,7 @@ public class WeatherOnlyImg extends PrivacyKey {
 	@Autowired
 	private WeatherService service;
 	
-	@Scheduled(cron = "6 2 * * * * ")
+	@Scheduled(cron = "6 2 0,8-22 * * *")
 	public void WeatherLite() throws Exception {
 		int width = 500;
 		int height = 400;

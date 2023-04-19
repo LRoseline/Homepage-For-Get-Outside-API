@@ -30,7 +30,7 @@ public class WeatherTest extends PrivacyKey {
 	@Autowired
 	private SettingService k;
 	
-	@Scheduled(cron = "6 0 * * * * ")
+	@Scheduled(cron = "6 0 0,8-22 * * *")
 	public void WeatherTry() throws Exception {
 		SimpleDateFormat ForeTimeStamp = new SimpleDateFormat("HH:mm", Locale.KOREA);
 		

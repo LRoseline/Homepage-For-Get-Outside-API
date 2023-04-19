@@ -9,7 +9,7 @@ import java.util.Calendar;
 import javax.imageio.ImageIO;
 import javax.xml.parsers.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
+// import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.*;
 import com.tfriends.domain.CovidLocationVO;
@@ -41,7 +41,7 @@ public class Covid19 extends PrivacyKey{
 	private static Image img = null;
 	private static Image imgloc = null;
 
-	@Scheduled(cron = "0 50 21 * * *")
+	// @Scheduled(cron = "0 50 21 * * *")
 	public void AdarasiCovidCount() {
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 		Calendar tomorrow = Calendar.getInstance();
@@ -51,7 +51,7 @@ public class Covid19 extends PrivacyKey{
 		service.newday(daytime);
 	}
 	
-	@Scheduled(cron = "0 5 * * * *")
+	// @Scheduled(cron = "0 5 * * * *")
 	public void Covid19_PG1() throws Exception {
         int width = 450;
         int height = 500;

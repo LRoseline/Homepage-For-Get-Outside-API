@@ -33,7 +33,7 @@ public class WeatherImage extends PrivacyKey{
 	@Autowired
 	private WeatherService service;
 	
-	@Scheduled(cron = "25 0 * * * * ")
+	@Scheduled(cron = "25 0 0,8-22 * * *")
 	public void CronTry() throws Exception {
 		String LinuxPath = "C:/Program Files/Apache Software Foundation/Tomcat 9.0/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
 		// String LinuxPath = "/usr/local/tomcat/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
