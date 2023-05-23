@@ -41,7 +41,7 @@ public class Covid19Controller {
 		header.setContentType(MediaType.IMAGE_PNG);
 
 		return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
-			new File("D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/covid19/covidvrc.png"))), header, HttpStatus.CREATED);
+			new File("D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/resources/covid19/covidvrc.png"))), header, HttpStatus.CREATED);
 	}
 	
 	
@@ -52,6 +52,6 @@ public class Covid19Controller {
 		header.setContentType(MediaType.IMAGE_PNG);
 		
 		return new ResponseEntity<byte[]>(IOUtils.toByteArray(new FileInputStream(
-			new File("D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/covid19/covidvrc1.png"))), header, HttpStatus.CREATED);
+			new File("D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/resources/covid19/covidvrc1.png"))), header, HttpStatus.CREATED);
 	}
 }

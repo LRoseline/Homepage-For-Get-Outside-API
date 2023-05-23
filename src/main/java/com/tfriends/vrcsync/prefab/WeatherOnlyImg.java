@@ -37,8 +37,8 @@ public class WeatherOnlyImg extends PrivacyKey {
 		int width = 500;
 		int height = 400;
 
-		String LinuxPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
-		String LinuxSave = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/Weather Lite/";
+		String LinuxPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
+		String LinuxSave = "D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/resources/Weather Lite/";
 		
 		for (int i = 0; i < loc.length; i++) {
 			WeatherVO tester = service.WeatherImport(loc[i]);

@@ -32,7 +32,7 @@ public class HomeController {
 		
 		return new ResponseEntity<byte[]>(
 			IOUtils.toByteArray(new FileInputStream(
-					new File("D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/weatherbg/"+icon+".jpg"))),
+					new File("D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/resources/weatherbg/"+icon+".jpg"))),
 			header, HttpStatus.CREATED);
 	}
 }

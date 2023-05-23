@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/mambtv/*")
 @Controller
 public class ImageController {
-	String WindowsPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/mambtv/weather/";
+	String WindowsPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/resources/mambtv/weather/";
 	
 	@ResponseBody
 	@GetMapping("/weather_now")

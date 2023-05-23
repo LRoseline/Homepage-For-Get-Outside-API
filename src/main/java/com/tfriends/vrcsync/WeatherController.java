@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class WeatherController {
-	String WindowsPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 9.0/resources/Weather Lite/";
+	String WindowsPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/resources/Weather Lite/";
 	
 	@ResponseBody
 	@GetMapping("/weatherlite")
