@@ -35,7 +35,7 @@ public class WeatherImage extends PrivacyKey{
 	
 	@Scheduled(cron = "25 0 0,8-22 * * *")
 	public void CronTry() throws Exception {
-		String LinuxPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/mainstream/vrcpref/WEB-INF/classes/static/imgs/weathericons/";
+		String LinuxPath = "D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/resources/static/imgs/weathericons/";
 		String LinuxSave = "D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/resources/mambtv/weather/";
 	
 		SimpleDateFormat date = new SimpleDateFormat("MM월 dd일");

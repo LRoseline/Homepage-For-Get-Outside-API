@@ -17,9 +17,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class ErrorCon implements ErrorController {
-    // String Path = "/usr/local/tomcat/webapps/vrcsync/WEB-INF/classes/static/errorimg/";
-    String Path = "D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/webapps/vrcsync/WEB-INF/classes/static/errorimg/";
-    // String Path = "C:/Users/amb17/eclipse-workspace/vrcsync/src/main/resources/static/errorimg/";
+    String Path = "D:/Network/Program Files/Apache Software Foundation/Tomcat 10.1/resources/static/errorimg/";
 
     @GetMapping("/error")
     public ResponseEntity<byte[]> errorimage(HttpServletRequest request) throws Exception {
